@@ -15,7 +15,8 @@ public class PQHeap implements PQ {
 	 *  maksimale antal elementer, der skal være plads til i køen
 	 */
 	public PQHeap(int maxElms) {
-		listOfElements = new Element[maxElms];		
+		listOfElements = new Element[maxElms+1];
+		//Tilføjede +1 siden første aflevering
     }
 	 
 	/* Metoden extractMin() skal returnere det element i prioritetskøen, som har mindst prioritet 
