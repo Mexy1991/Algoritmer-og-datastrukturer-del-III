@@ -30,6 +30,9 @@ public class Encode {
 
 
 	public static void main(String[] args) throws Exception{
+
+	//int q;
+	//int z;
 	/*
 	 * Scanner inputfilen og indsætter i array
 	 */
@@ -41,34 +44,36 @@ public class Encode {
 
 		//Skal vist nok være et int-array ifølge Rolf - MÅSKE!
 		
-		;
-		outputFile.write(bitsForTest);
-		// Man kan pt. ikke overskrive filer. TEST EVT TIL SIDST
+		
+		
 
 
 		/* Scans file
 		*/
-		int count = 0;
-		while(count < 256){
+		int counter = 0;
+		while(counter < 256){
 			int x = in.readInt();
-			frequency[count] = x;
-			count++;
+			frequency[counter] = (byte)x;
+			counter++;
 			}
 
 		/* indsætter fra arrayet til prioritetskø */ 
 		for (int i = 0; i < 256; i++){
+			//z = i;
+			//q = frequency[i];
 			int q = frequency[i];
 			pq.insert(new Element(q,i));
 			n++;		
 		}
-		Huffman();
+		//Huffman();
 
-
+		outputFile.write(bitsForTest);
+		// Man kan pt. ikke overskrive filer. TEST EVT TIL SIDST
 
 
 	}
 
-
+/*
 	public static void Huffman() throws IOException{
 	/*
 	 * Baseret på pseudokoden fra bogen
@@ -85,7 +90,7 @@ public class Encode {
 	// int n = bitsForTest.length; 
 	// System.out.println(n);
 	// n kommer fra forrige metode
-	 for (int i = 0; i < n-1 ; i++){
+/*	 for (int i = 0; i < n-1 ; i++){
 		Element[] element = new Element[2];
 		element[0] = pq.extractMin();
 		element[1] = pq.extractMin();
@@ -99,4 +104,5 @@ public class Encode {
 
 	
 	}
-}
+
+	*/
